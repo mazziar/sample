@@ -1,0 +1,16 @@
+export default {
+    inputHeight: '33px',
+    inputLargHeight: '43px',
+    borderRadius: '4px',
+    border:'1px',
+    sidebarWidth: '28%',
+    checkHeight: '6px',
+    checkWidth: '6px',
+    sidebarWidthTablet: '52px',
+    drawerWidthDesktop: '360px',
+    drawerWidthTablet: '320px',
+    columnWidthDate: 160,
+    columnWidthNumber: 130,
+    columnWidthString: 160,
+    columnWidthBoolean: 130,
+  };

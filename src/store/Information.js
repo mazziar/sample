@@ -5,9 +5,13 @@ const { reducer, actions } = createSlice({
   initialState: {
     users:[],
     products:[],
+    tokenExpired:false,
 
   },
   reducers: {
+    expireToken(state, action) {
+        
+    },
     updateUsers(state, action) {
      state.users = action.payload.data
     },

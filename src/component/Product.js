@@ -12,13 +12,7 @@ const Product = ({ item }) => {
 
   return (
     <>
-
-      <div>
-        {item.name} <br />
-        {item.pantone_value} <br />
-        {item.year} <Hr style={{ 'backgroundColor': item.color }} />
-      </div>
-
+page 2
     </>
   );
 }

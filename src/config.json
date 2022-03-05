@@ -1,0 +1,6 @@
+{
+   "base_url":"http://192.168.100.23:4000/api/v1",
+   "rocket_base_ws":"ws://192.168.100.23:5000/websocket",
+   "get_messages":"http://192.168.100.23:5000/api/v1/channels.messages",
+   "rocket_base_api":"http://192.168.100.23:5000/api/v1"  
+}

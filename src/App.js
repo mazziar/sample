@@ -1,44 +1,54 @@
-import logo from './logo.svg';
 import React from 'react';
-import './App.css';
-import { Switch, BrowserRouter, Route } from 'react-router-dom'
-import MainPage from './MainPage';
+import { Switch, Route } from 'react-router-dom';
 import SocketController from './SocketController';
-import Users from './component/Users';
-import Products from './component/Products';
-import Prices from './component/Prices';
-import styled from 'styled-components'
-const Th = styled.th`
-  color: Gray;
-  font-size: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  width: 30vw;
-  padding: 0.25em 1em;
-  border: 3px solid;
-  border-radius: 30px;
-  background-color: rgba(38, 25, 83, 0.8);
-  vertical-align: top;
-`;
+import User from './component/Users';
+import Product from './component/Products';
+import Price from './component/Prices';
+import Login from './pages/login'
+import Post from './pages/post'
+import LandingPage from './pages/landingPage'
+import homePage from './pages/homePage'
+import theme from './theme'
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+
+
 function App() {
   return (
-    <div style={{ backgroundColor: 'rgba(110, 53, 34, 1)' }}>
-      <SocketController />
-      <table cellspacing="30" style={{ width: '100%', "padding-top": "10px" }}>
-        <tr >
-          <Th>
-            <Users />
-          </Th>
-          <Th>
-            <Products />
-          </Th>
-          <Th>
-            <Prices />
-          </Th>
-        </tr>
-      </table>
-    </div>
+    <>
+    <ThemeProvider theme={theme}>
+    <CssBaseline /> 
+    {/* <SocketController /> */}
+    <Switch>
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/homePage" component={homePage} />
+      <Route exact path="/post/:Id?" component={Post} />
+      <Route exact path="/3" component={User} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Price} />
+      <Route exact path="/verification" component={Price} />
+      <Route exact path="/forgotPassword" component={Price} />
+      <Route exact path="/newPassword/:token?" component={Price} />
+      <Route exact path="/traders" component={Price} />
+      <Route exact path="/charts/:symbol?" component={Price} />
+      <Route exact path="/markets" component={Price} />
+      <Route exact path="/trader/:id?" component={Price} />
+      <Route>
+        {true ? (
+          <Switch>
+            <Route exact path="/dashboard" component={User} />
+            <Route exact path="/*" component={User} />
+          </Switch>
+        ) : (
+            <Switch>
+              <Route exact path="/dashboard" component={User} />
+              <Route exact path="/*" component={User} />
+            </Switch>
+          )}
+      </Route>
+    </Switch>
+   </ThemeProvider> 
+  </>
   )
 }
 
